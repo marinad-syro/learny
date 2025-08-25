@@ -17,9 +17,10 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from sopheo.views import start
+from sopheo.views import start, full_map
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", start, name = 'start'),
+    path('full-map/', full_map, name='full_map'),
 ]

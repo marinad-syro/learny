@@ -10,5 +10,15 @@
         {{ form.as_p }}
         <button type="submit">Submit</button>
     </form>
+    {% if lrning_map %}
+        <h2>Your First 3 Lessons</h2>
+        <ul>
+        {% for module in lrning_map %}
+            <li>{{ module }}: {{ module.description }}</li>
+        {% endfor %}
+        </ul>
+        <a href="{% url 'full_map' %}?area={{ form.cleaned_data.area }}&skill_level={{ form.cleaned_data.skill_level }}">View Full Learning Map</a>
+    {% endif %}
 </body>
 </html>
+

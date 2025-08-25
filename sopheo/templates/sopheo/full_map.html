@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Full Learning Pathway</title>
+</head>
+<body>
+    <h1>Full Learning Pathway for {{ area|title }} ({{ skill_level|title }})</h1>
+    {% if path %}
+        <ul>
+        {% for module in path %}
+            <li>{{ module }}: {{ module.description }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No modules available for this topic and skill level.</p>
+    {% endif %}
+    <a href="{% url 'start' %}">Back to Form</a>
+</body>
+</html>
